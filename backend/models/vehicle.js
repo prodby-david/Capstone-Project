@@ -19,7 +19,14 @@ const vehicleSchema = mongoose.Schema({
     color:{
         type: String
     },
+    type:{
+        type: mongoose.Schema.ObjectId,
+        ref: 'VehicleType',
+        required: true
+    }
   
+}, {
+    timestamps: true
 });
 
 const Vehicle = mongoose.model('Vehicle', vehicleSchema);
