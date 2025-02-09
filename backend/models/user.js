@@ -20,13 +20,24 @@ const userSchema =  mongoose.Schema({
         lowercase: true
     },
     password:{
-        type: Number,
+        type: String,
         required: true,
     },
     phoneNumber:{
         type: String,
         required: true
+    },
+    vehicles:[{
+       type: mongoose.Schema.ObjectId, 
+       ref: 'Vehicle', 
+       required: true
+    }],
+    paymentHistory:{
+        type: mongoose.Schema.ObjectId,
+        ref: 'Payment',
+        required: true
     }
+
 });
 
 const User = mongoose.model('User', userSchema);
