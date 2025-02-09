@@ -9,5 +9,8 @@ const vehicleTypeSchema = mongoose.Schema({
     parkingRate: {
         type: Number, 
     }
+});
 
-})
+const VehicleType = mongoose.model('Types', VehicleType);
+
+export default VehicleType;
